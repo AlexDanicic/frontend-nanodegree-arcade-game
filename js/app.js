@@ -3,10 +3,10 @@
 // Enemies our player must avoid
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
+    this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
     this.speed = Math.floor(Math.random() * (200 - 50)) + 50;
-    this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position, required method for game
@@ -16,7 +16,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.    
     // loop the enemies from left side
-    if ((this.x >= player.x - 25 && this.x <= player.x +25) && (this.y >= player.y - 25 && this.y <= player.y +25)) {
+    if ((this.x >= player.x - 25 && this.x <= player.x + 25) && (this.y >= player.y - 25 && this.y <= player.y + 25)) {
         //add the player lives
         player.lives--;
         // reset the player
@@ -36,8 +36,7 @@ Enemy.prototype.render = function() {
 
 // Own player class
 // Place the player object in a variable called player
-var Player = function () {
-    this.sprite = 'images/char-boy.png';
+var Player = function() {    
     this.x = 200;
     this.y = 400;
     // lives
@@ -45,9 +44,45 @@ var Player = function () {
     // starter score
     this.score = 0;
     this.active = true;
+    this.sprite = 'images/char-boy.png';
 };
 
-var player = new Player();
+// This listens for key presses and movements by keys
+Player.prototype.update = function(dt) {
+    // up movement
+    if (this.pressedKey === 'up' && this.y > 0) {
+        this.y = this.y - 90;
+    }
+    // down movement
+    if (this.pressedKey === 'down' && this.y < 400) {
+        this.y = this.y + 90;
+    }
+    // left movement
+    if (this.pressedKey === 'left' && this.x > 0) {
+        this.x = this.x - 100;
+    }
+    // right movement
+    if (this.pressedKey === 'right' && this.x < 400) {
+        this.x = this.x + 100;
+    }
+
+    //player move
+    this.pressedKey = null;
+
+    //reset the player
+    if (this.y < 0) {
+        this.score++;
+        this.reset();
+    }
+
+    // score and lives update
+};
+
+// Draw the player on canvas-Player prototype function
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
 
 
 // Now instantiate your objects.
@@ -57,34 +92,9 @@ allEnemies.push(new Enemy(0, 50));
 allEnemies.push(new Enemy(0, 140));
 allEnemies.push(new Enemy(0, 230));
 
-// This listens for key presses and movements by keys
-Player.prototype.update = function(dt) {
-    // up movement
-    if (this.pressedKey === 'up' && this.y > 0) {
-        this.y = this.y - 90;
-    }
-    // down movement
-    if (this.pressedKey === 'down' && this.y > 400) {
-        this.y = this.y + 90;
-    }
-    // left movement
-    if (this.pressedKey === 'left' && this.x > 0) {
-        this.x = this.x - 100;
-    }
-    // right movement
-    if (this.pressedKey === 'right' && this.x > 400) {
-        this.x = this.x + 100;
-    }
+// Place the player object in a variable called player
+var player = new Player();
 
-    //reset the player
-    if (this.y < 0) {
-        this.score++;
-        this.reset();
-    }
-
-    //player move
-    this.pressedKey = null;
-};
 
 // function(e)
 Player.prototype.handleInput = function(e) {
@@ -99,9 +109,6 @@ Player.prototype.reset = function() {
         this.active = false;
     }
 };
-
-
-
 
 // default event listener for arrow keys
 document.addEventListener('keyup', function(e) {
