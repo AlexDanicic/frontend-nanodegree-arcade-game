@@ -59,8 +59,23 @@ allEnemies.push(new Enemy(0, 230));
 
 // This listens for key presses and movements by keys
 Player.prototype.update = function(dt) {
-    
-}
+    // up movement
+    if (this.pressedKey === 'up' && this.y > 0) {
+        this.y = this.y - 90;
+    }
+    // down movement
+    if (this.pressedKey === 'down' && this.y > 400) {
+        this.y = this.y + 90;
+    }
+    // left movement
+    if (this.pressedKey === 'left' && this.x > 0) {
+        this.x = this.x - 100;
+    }
+    // right movement
+    if (this.pressedKey === 'right' && this.x > 400) {
+        this.x = this.x + 100;
+    }
+};
 
 
 // default event listener for arrow keys
