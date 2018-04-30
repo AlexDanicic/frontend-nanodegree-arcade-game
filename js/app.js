@@ -91,6 +91,15 @@ Player.prototype.handleInput = function(e) {
     this.pressedKey = e;
 };
 
+// reset
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 400;
+    if (this.lives === 0) {
+        this.active = false;
+    }
+};
+
 
 // default event listener for arrow keys
 document.addEventListener('keyup', function(e) {
