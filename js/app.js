@@ -36,7 +36,7 @@ Enemy.prototype.render = function() {
 
 // Own player class
 // Place the player object in a variable called player
-const Player = function () {
+var Player = function () {
     this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 400;
@@ -47,12 +47,12 @@ const Player = function () {
     this.active = true;
 };
 
-const player = new Player();
+var player = new Player();
 
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [];
+var allEnemies = [];
 allEnemies.push(new Enemy(0, 50));
 allEnemies.push(new Enemy(0, 140));
 allEnemies.push(new Enemy(0, 230));
@@ -99,6 +99,8 @@ Player.prototype.reset = function() {
         this.active = false;
     }
 };
+
+
 
 
 // default event listener for arrow keys
