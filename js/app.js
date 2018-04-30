@@ -35,7 +35,7 @@ Enemy.prototype.render = function() {
 };
 
 // Own player class
-
+// Place the player object in a variable called player
 const Player = function () {
     this.sprite = 'images/char-boy.png';
     this.x = 200;
@@ -47,6 +47,8 @@ const Player = function () {
     this.active = true;
 };
 
+const player = new Player();
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -54,10 +56,6 @@ const allEnemies = [];
 allEnemies.push(new Enemy(0, 50));
 allEnemies.push(new Enemy(0, 140));
 allEnemies.push(new Enemy(0, 230));
-
-// Place the player object in a variable called player
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
