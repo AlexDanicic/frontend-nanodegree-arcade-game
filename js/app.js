@@ -83,6 +83,7 @@ Player.prototype.update = function(dt) {
     }
 
     //player move
+    this.pressedKey = null;
 };
 
 
