@@ -86,6 +86,11 @@ Player.prototype.update = function(dt) {
     this.pressedKey = null;
 };
 
+// function(e)
+Player.prototype.handleInput = function(e) {
+    this.pressedKey = e;
+};
+
 
 // default event listener for arrow keys
 document.addEventListener('keyup', function(e) {
