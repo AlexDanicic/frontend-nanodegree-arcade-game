@@ -57,8 +57,13 @@ allEnemies.push(new Enemy(0, 50));
 allEnemies.push(new Enemy(0, 140));
 allEnemies.push(new Enemy(0, 230));
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// This listens for key presses and movements by keys
+Player.prototype.update = function(dt) {
+    
+}
+
+
+// default event listener for arrow keys
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -66,6 +71,6 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
+// Player.handleInput() method.
     player.handleInput(allowedKeys[e.keyCode]);
 });
