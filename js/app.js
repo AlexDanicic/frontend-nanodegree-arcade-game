@@ -76,6 +76,11 @@ Player.prototype.update = function(dt) {
     }
 
     // score and lives update
+    ctx.font = '1em Acme';
+    ctx.fillStyle = 'blue';
+    ctx.clearRect(0, 0, 505, 50);
+    ctx.fillText('Lives: ' + this.lives, 10, 40);
+
 };
 
 // Draw the player on canvas-Player prototype function
