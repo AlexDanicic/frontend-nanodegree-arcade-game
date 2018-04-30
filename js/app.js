@@ -75,6 +75,14 @@ Player.prototype.update = function(dt) {
     if (this.pressedKey === 'right' && this.x > 400) {
         this.x = this.x + 100;
     }
+
+    //reset the player
+    if (this.y < 0) {
+        this.score++;
+        this.reset();
+    }
+
+    //player move
 };
 
 
