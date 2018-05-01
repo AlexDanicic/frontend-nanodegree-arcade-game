@@ -1,4 +1,11 @@
 // TODO: add playerLives
+//TODO: endModal
+
+// player popup window
+var newPlayer;
+do {
+    newPlayer = prompt("Please, enter Your name");
+} while (!newPlayer);
 
 // Enemies our player must avoid
 var Enemy = function(x, y) {
@@ -115,13 +122,26 @@ Player.prototype.reset = function() {
         this.active = false;
         //consloe.log('try this way');
     }
+    //console.log('try');
 };
 
-// Game Over msg for the end
+// Game Over message for the end of the game
 Player.prototype.gameOver = function() {
     ctx.font = '5em Acme';
     ctx.fillStyle = '#ffa004';
-    ctx.fillText('Game Over', 70, 300);
+    ctx.fillText('Game Over', 70, 275);
+
+    // modal for the end of the game    
+    ctx.font = '3em Acme';
+    ctx.fillStyle = 'red';
+    ctx.fillText(`Dear ${newPlayer},`, 125, 350);
+    ctx.font = '2.5em Acme';
+    ctx.fillText(`thanks for playing my game`, 20, 420);
+    ctx.fillText(`I hope You liked it`, 120, 490);
+    //console.log('modal');
+
+    // modal for the end of the game    
+    // TODO: endModal       
 };
 
 // restart button

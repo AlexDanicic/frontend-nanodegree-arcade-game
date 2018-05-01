@@ -1,8 +1,22 @@
 body {
     text-align: center;
-    background-color: aqua;
+    background-color: #0ff;
 }
 
 #myButton {
+    font-size: 1.5em;
+    background: linear-gradient(160deg, #02ccba 0%, #4a3adb 100%);
+    color: #fff;
+    text-shadow: 2px 2px 2px #4d4b4b;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+
+#myButton:hover {
+    background: linear-gradient(160deg, #4a3adb 0%, #02ccba 100%);
+    color: #fff;
+    text-shadow: 2px 2px 2px #4af805;
     font-size: 1.5em;
 }
