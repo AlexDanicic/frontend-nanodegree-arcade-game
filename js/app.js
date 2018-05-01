@@ -75,12 +75,15 @@ Player.prototype.update = function(dt) {
         this.reset();
     }
 
-    // score and lives update
-    ctx.font = '1em Acme';
+    // lives
+    ctx.font = '2.5em Acme';
     ctx.fillStyle = 'blue';
     ctx.clearRect(0, 0, 505, 50);
     ctx.fillText('Lives: ' + this.lives, 10, 40);
 
+    // score
+    ctx.fillStyle = 'lime';
+    ctx.fillText('Score: ' + this.score, 300, 40);
 };
 
 // Draw the player on canvas-Player prototype function
