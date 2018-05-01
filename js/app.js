@@ -77,12 +77,12 @@ Player.prototype.update = function(dt) {
 
     // lives
     ctx.font = '2.5em Acme';
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = '#2d52e8';
     ctx.clearRect(0, 0, 505, 50);
     ctx.fillText('Lives: ' + this.lives, 10, 40);
 
     // score
-    ctx.fillStyle = 'lime';
+    ctx.fillStyle = '#06f007';
     ctx.fillText('Score: ' + this.score, 300, 40);
 };
 
@@ -90,8 +90,6 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -115,8 +113,21 @@ Player.prototype.reset = function() {
     this.y = 400;
     if (this.lives === 0) {
         this.active = false;
+        //consloe.log('try this way');
     }
 };
+
+// Game Over msg for the end
+Player.prototype.gameOver = function() {
+    ctx.font = '5em Acme';
+    ctx.fillStyle = '#ffa004';
+    ctx.fillText('Game Over', 70, 300);
+};
+
+// restart button
+function myButton() {
+    location.reload();
+}
 
 // default event listener for arrow keys
 document.addEventListener('keyup', function(e) {
