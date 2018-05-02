@@ -1,6 +1,74 @@
-frontend-nanodegree-arcade-game
-===============================
+# FrontEnd Nanodegree Arcade Game Project
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table Of Content
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* Arcade Game Description
+* Instructions
+* About Game Play
+* Sources
+* Coming Soon
+
+## *<u>Arcade Game Description</u>*
+
+First Of All: Have Fun And Enjoy It.
+
+The object of the game is to pass the road, avoid the bugs and reach the water.
+
+There are some bugs provided randomly.
+
+
+## *<u>Instructions</u>*
+
+To play this game, You can download or clone it, and run the provided **index.html** file in Your browser.
+
+## *<u>About Game Play</u>*
+
+- As the game runs, please, add Your name in the prompt box. 
+
+- To move the character, use the arrow keys on your keyboard:
+
+      - Up: Up Arrow Key
+
+      - Down: Down Arrow Key
+
+      - Left: Left Arrow Key
+
+      - Right: Right Arrow Key 
+
+- When You reach the water, You earn a point
+
+-If You touch the bug, You lose one life. When You lose Your lives, it's Game Over
+
+- If You are unhappy with the current score or with the game, You can reload it with the provided button below the canvas grid.
+
+- At the end of the game, You will be provided with the message, and You can play the Arcade Game again.
+
+## *<u>Sources</u>*
+
+[Udacity](https://www.udacity.com)
+
+[Stack Overflow](https://stackoverflow.com)
+
+[Google](https://www.google.com)
+
+[GitHub](https://www.github.com)
+
+[Google Fonts](https://fonts.google.com/)
+
+## *<u>Coming Soon</u>*
+* [x] Update
+
+* [ ] High Score Table
+
+* [ ] Sounds
+
+* [ ] Animations
+
+* [ ] Another Characters
+
+_ _ _
+
+> # Thank You for Your time, and as always: **Happy Coding** 
+> ### Alex. Danicic
+
+
